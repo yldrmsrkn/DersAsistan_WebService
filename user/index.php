@@ -43,9 +43,9 @@
                echo "ERR#2";
             }
         }
-    }/*elseif (isset($_GET['add_ders'])) {
-        
-    }*/
+    }elseif (isset($_GET['add_ders'])) {
+        ///
+    }
 
 
 ?>
