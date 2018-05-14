@@ -12,13 +12,18 @@
         $sql = "SELECT * FROM `dersler` WHERE `dersid` = ". $add_course_course_id ."";
         if ($result = mysqli_query($con, $sql)){
             if(mysqli_num_rows($result) > 0){
-                echo "exist"
+                $arr = array('message' => "EXIST");
+                echo json_encode($arr);
             }else{
                 $sql = "INSERT INTO `dersler` (`dersid`, `dersadi`) VALUES ('".$add_course_course_id."', '".$add_course_course_name."');";
                 if (mysqli_query($con, $sql)) {
-                    echo "OK"
+                    $arr = array('message' => "OK");
+
+                    echo json_encode($arr);
                 } else {
-                    echo "Err"
+                    $arr = array('message' => "ERR");
+
+                    echo json_encode($arr);
                 }
             }
         }
