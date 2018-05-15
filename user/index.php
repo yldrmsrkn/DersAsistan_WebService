@@ -40,7 +40,7 @@
                     echo "OK#" . $row["role"];
                 }
             }else{
-               echo "ERR#2";
+               echo "ERR#";
             }
         }
     }elseif (isset($_GET['list_user'])) {
