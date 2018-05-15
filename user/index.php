@@ -43,6 +43,20 @@
                echo "ERR#2";
             }
         }
+    }elseif (isset($_GET['list_user'])) {
+        if (!$con) {
+            die("Connection failed: " . mysqli_connect_error());
+        }
+        $sql = "SELECT `username` FROM `users` WHERE `role` = 3 ";
+        if ($result = mysqli_query($con, $sql)) 
+        {
+            $emparray = array();
+            while($row =mysqli_fetch_assoc($result))
+            {
+                $emparray[] = $row;
+            }
+            echo json_encode($emparray);
+        }
     }
 
 
